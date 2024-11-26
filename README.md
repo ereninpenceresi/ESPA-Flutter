@@ -1,2 +1,2 @@
-# Q-Flutter
+# SchoolProject-Flutter
 Istinye Universty Student Projects
