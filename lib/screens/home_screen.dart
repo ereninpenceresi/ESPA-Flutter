@@ -12,10 +12,10 @@ class HomeScreen extends StatelessWidget {
       backgroundColor: Color.fromARGB(255, 63, 72, 204),
       // AppBar
       appBar: AppBar(
-        title: const Text('Ana Sayfa'),
+        title: const Text('ESPA'),
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.bell),
+            icon: const Icon(CupertinoIcons.search),
             onPressed: () {},
           ),
         ],
@@ -28,7 +28,6 @@ class HomeScreen extends StatelessWidget {
             // Drawer Header
             Container(
               height: 200,
-              color: Colors.white,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -38,20 +37,6 @@ class HomeScreen extends StatelessWidget {
                     color: Color.fromARGB(255, 63, 72, 204),
                   ),
                   const SizedBox(height: 10),
-                  SizedBox(
-                    width: 300,
-                    child: DotLottieLoader.fromAsset(
-                      "assets/motions/loading.lottie",
-                      frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
-                        if (dotlottie != null) {
-                          return Lottie.memory(
-                              dotlottie.animations.values.single);
-                        } else {
-                          return Container();
-                        }
-                      },
-                    ),
-                  ),
                 ],
               ),
             ),
@@ -64,15 +49,29 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.person),
-              title: const Text('Profil'),
+              leading: const Icon(CupertinoIcons.list_number),
+              title: const Text('Puan Durumu'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.hammer),
+              leading: const Icon(CupertinoIcons.star_circle),
+              title: const Text('Favorilerim'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(CupertinoIcons.hammer_fill),
               title: const Text('Ayarlar'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              leading: const Icon(CupertinoIcons.moon_fill),
+              title: const Text('Dark Mod'),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -106,24 +105,11 @@ class HomeScreen extends StatelessWidget {
       ),
 
       // Alt navigasyon çubuğu
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
-            label: 'Ana Sayfa',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
-            label: 'Keşfet',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person),
-            label: 'Profil',
-          ),
-        ],
-        onTap: (index) {
-          // Navigasyon işlemleri buraya gelecek
-        },
+      bottomNavigationBar: Container(
+        height: 70,
+        child: Row(
+          children: [],
+        ),
       ),
     );
   }
